@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+
 /// Servicio de IA con Gemini o modelo generativo para educación financiera
 class GeminiService {
   final String _apiKey = 'YOUR_GEMINI_API_KEY'; // Reemplázalo con tu API Key real
