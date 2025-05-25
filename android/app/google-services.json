@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "142448075308",
+    "project_id": "dsltechbank",
+    "storage_bucket": "dsltechbank.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142448075308:android:580e996f77f34e298ca789",
+        "android_client_info": {
+          "package_name": "tech.dsl.finlink"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnKqcsIxDKsWc8gn2fYvXmfQQRqQ640Gc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

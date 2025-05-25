@@ -493,3 +493,4 @@ class WalletProvider extends ChangeNotifier {
       _setLoading(false);
     }
   }
+}
