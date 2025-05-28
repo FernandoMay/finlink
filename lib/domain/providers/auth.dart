@@ -264,13 +264,13 @@ class AuthProvider extends ChangeNotifier {
   }
   
   String _hashBiometric(String biometricData) {
-    var bytes = utf8.encode(biometricData + 'finlink_salt');
+    var bytes = utf8.encode('${biometricData}finlink_salt');
     var digest = sha256.convert(bytes);
     return digest.toString();
   }
   
   String _hashSensitiveData(String data) {
-    var bytes = utf8.encode(data + 'finlink_security_salt');
+    var bytes = utf8.encode('${data}finlink_security_salt');
     var digest = sha256.convert(bytes);
     return digest.toString();
   }

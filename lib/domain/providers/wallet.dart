@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'dart:math';
 
 class WalletProvider extends ChangeNotifier {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -10,17 +9,17 @@ class WalletProvider extends ChangeNotifier {
   // Wallet state
   double _balance = 0.0;
   String _currency = 'USD';
-  bool _isLoading = false;
+  final bool _isLoading = false;
   String? _errorMessage;
   
   // Savings goals
-  List<Map<String, dynamic>> _savingsGoals = [];
+  final List<Map<String, dynamic>> _savingsGoals = [];
   double _totalSavingsTarget = 0.0;
   double _totalSavingsCurrent = 0.0;
   
   // Quick actions
-  List<Map<String, dynamic>> _quickActions = [];
-  List<Map<String, dynamic>> _frequentContacts = [];
+  final List<Map<String, dynamic>> _quickActions = [];
+  final List<Map<String, dynamic>> _frequentContacts = [];
   
   // Security
   bool _isWalletLocked = false;
@@ -224,10 +223,10 @@ class WalletProvider extends ChangeNotifier {
       // Sender transaction
       DocumentReference senderTransaction = _firestore
           .collection('transactions')
-          .doc(transactionId + '_sender');
+          .doc('${transactionId}_sender');
       
       batch.set(senderTransaction, {
-        'id': transactionId + '_sender',
+        'id': '${transactionId}_sender',
         'userId': user.uid,
         'type': 'transfer_out',
         'amount': -amount,
@@ -244,10 +243,10 @@ class WalletProvider extends ChangeNotifier {
       // Recipient transaction
       DocumentReference recipientTransaction = _firestore
           .collection('transactions')
-          .doc(transactionId + '_recipient');
+          .doc('${transactionId}_recipient');
       
       batch.set(recipientTransaction, {
-        'id': transactionId + '_recipient',
+        'id': '${transactionId}_recipient',
         'userId': recipientId,
         'type': 'transfer_in',
         'amount': amount,

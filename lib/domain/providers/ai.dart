@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'dart:math';
 
 class AIProvider extends ChangeNotifier {
@@ -52,7 +50,7 @@ class AIProvider extends ChangeNotifier {
         _riskAssessment = aiResponse['risk_assessment'];
         
         // Generate personalized recommendations
-        await _generateRecommendations(userId, analysisData);
+        _generateRecommendations(userId, analysisData);
         
         notifyListeners();
         return true;

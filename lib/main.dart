@@ -168,7 +168,9 @@ import 'services/ai_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   
   // Initialize services
   await FirebaseService.initialize();
@@ -178,6 +180,8 @@ void main() async {
 }
 
 class FinLinkApp extends StatelessWidget {
+  const FinLinkApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -235,6 +239,8 @@ class FinLinkApp extends StatelessWidget {
 }
 
 class AuthWrapper extends StatelessWidget {
+  const AuthWrapper({super.key});
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<User?>(
